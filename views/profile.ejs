@@ -1,0 +1,62 @@
+<%- include('./partials/userProfileHeader')-%>
+<div class="container">
+    <div class="row">
+        <div class="col-12 py-3">
+            <%- include('./partials/messages') -%>
+            <a href="/" class="fa fa-arrow-left py-3">Back to Home</a>
+            <h1 class="">Hello <span class="orange-text">patient name</span></h1>
+            <h4 class="">email</h4>
+            <button class="btn green py-1 my-1" data-toggle="modal" data-target="#profileDetailsModal">
+                User PD
+            </button>
+            <a href="/users/edit%>">
+                <button class="btn blue py-1 my-1">
+                    Edit Profile
+                </button>
+            </a>
+            <hr>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- pd modal -->
+<div class="modal fade text-dark" id="profileDetailsModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="profileDetailsModalTitle">Users Personal Data</h5>
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Hola, <span class="blue-text">patient name</span>
+                , This is your email address <span class="red-text">email</span>, 
+                you joined on <span class="green-text">patient date</span>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- settings modal -->
+<div class="modal fade text-dark" id="settingsModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="profileDetailsModalTitle">Settings</h5>
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>change background color</p>
+                <button class="btn btn-block py-1  yellow" onclick="yellow()">Change to yellow</button>
+                <button class="btn btn-block py-1  blue" onclick="blue()">Change to blue</button>
+                <button class="btn btn-block py-1  green" onclick="green()">Change to green</button>
+                <button class="btn btn-block py-1  black" onclick="black()"> change to black</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<%- include('./partials/header') -%>
+<div class="container">
+    <div class="card center-align">
+        <div class="container">
+            <div class="card-title center">
+                <!-- <h3 class="fas fa-calendar-plus"></h3> -->
+                <h4 class="teal-text">Sign In </h4>
+            </div>
+            <div class="card-content">
+                <%- include('./partials/messages') -%>
+                    <form action="/patient/signin" method="POST">
+                        <div class="input-field">
+                            <input type="email" id="email" name="email" class="form-control"
+                                value="<%= typeof email != 'undefined' ? email : '' %>" />
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" id="password" name="password" class="form-control"
+                                value="<%= typeof password != 'undefined' ? password : '' %>" />
+                            <label for="password">Enter Password</label>
+                        </div>
+                        <button type="submit" class="btn teal darken-4">
+                            SignIn
+                        </button>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+<%- include('./partials/header') -%>
+<div class="container">
+<div class="card center-align">
+    <div class="container">
+        <div class="card-header center">
+            <a href="#!" class="btn-floating pulse teal darken-4 modal-close right"><i class="fas fa-times"></i></a>
+            <!-- <h3 class="fas fa-calendar-plus"></h3> -->
+            <h4 class="teal-text">Sign Up </h4>
+        </div>
+        <div class="card-content">
+            <%- include('./partials/messages') -%>
+                <form action="/patient/signup" method="POST">
+                    <div class="input-field">
+                        <input type="name" id="firstname" name="firstname" class=""
+                            value="<%= typeof name != 'undefined' ? firstname : '' %>" />
+                        <label for="firstname">Enter First Name</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="name" id="lastname" name="lastname" class=""
+                            value="<%= typeof name != 'undefined' ? lastname : '' %>" />
+                        <label for="lastname">Enter Last Name</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="name" id="othername" name="othername" class=""
+                            value="<%= typeof name != 'undefined' ? othername : '' %>" />
+                        <label for="othername">Enter Other Name(s)</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" id="email" name="email" class=""
+                            value="<%= typeof email != 'undefined' ? email : '' %>" />
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-field">
+                        <select id="bloodgroup" name="bloodGroup" >
+                            <option value="" disabled selected>Choose Your Blood Group</option>
+                            <option value="1">A+</option>
+                            <option value="2">B+</option>
+                            <option value="3">AB+</option>
+                            <option value="4">O+</option>
+                            <option value="5">A-</option>
+                            <option value="6">B-</option>
+                            <option value="7">AB-</option>
+                            <option value="8">O-</option>
+                        </select>
+                        <label for="bloodgroup">Blood Group</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="password" name="password" placeholder="Atleast 8 characters"
+                            class="" value="<%= typeof password != 'undefined' ? password : '' %>" />
+                        <label for="password">Enter Password</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="password2" name="password2" class=""
+                            value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+                        <label for="password2">Confirm Password</label>
+                    </div>
+                    <!-- trying admin settings -->
+                    <div class="input-field ">
+                        <input type="text" id="isAdmin" name="isAdmin" class="" value="<%= false %>" />
+                        <label for="isAdmin">Are you an Admin</label>
+                    </div>
+                    <button type="submit" class="btn teal darken-4">
+                        Sign Up
+                    </button>
+                </form>
+        </div>
+    </div>
+    </div>
+</div>

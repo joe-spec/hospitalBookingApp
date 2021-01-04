@@ -1,0 +1,29 @@
+<% if(typeof errors !='undefined' ) { %>
+    <% errors.forEach(function(error) { %>
+        <div class="chip red white-text">
+            <%= error.msg %>
+            <i class="close">&times;</i>
+        </div>
+    <% }); %>
+<% } %>
+
+<% if(success_msg !='' ) { %>
+    <div class="chip green white-text">
+        <%= success_msg %>
+        <i class="close">&times;</i>
+    </div>
+<% } %>
+
+<% if(error_msg !='' ) { %>
+    <div class="chip red white-text">
+        <%= error_msg %>
+        <i class="close">&times;</i>
+    </div>
+<% } %>
+
+<% if(error !='' ) { %>
+    <div class="chip red white-text">
+        <%= error %>
+        <i class="close">&times;</i>
+    </div>
+<% } %>

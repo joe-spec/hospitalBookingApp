@@ -1,0 +1,105 @@
+<%- include('./partials/header') -%>
+
+  <div class="slider">
+    <div class="black" style="position: relative; top: 20;">
+      <%- include('./partials/messages') -%>
+    </div>
+    <div class="darkOverlay"></div>
+    <ul class="slides">
+      <li>
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <% if(!patient){ %>
+            <p><%= patient %></p>
+            <a class="waves-effect teal darken-4 white-text darken-text-2 waves-light btn modal-trigger" href="#booking">Book
+              An Appointment</a>
+          <% } %>
+        </div>
+      </li>
+      <li>
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <% if(patient){ %>
+            <p><%= patient %></p>
+            <a class="waves-effect teal darken-4 white-text darken-text-2 waves-light btn modal-trigger" href="#booking">Book
+              An Appointment</a>
+          <% } %>
+        </div>
+      </li>
+      <li>
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <% if(patient){ %>
+            <p><%= patient %></p>
+            <a class="waves-effect teal darken-4 white-text darken-text-2 waves-light btn modal-trigger" href="#booking">Book
+              An Appointment</a>
+          <% } %>
+        </div>
+      </li>
+      <li>
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <% if(patient){ %>
+            <p><%= patient.email %></p>
+            <a class="waves-effect teal darken-4 white-text darken-text-2 waves-light btn modal-trigger" href="#booking">Book
+              An Appointment</a>
+          <% } %>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+  <!-- Modal Structure -->
+  <div id="booking" class="modal pt-5">
+
+    <div class="container">
+      <div class="modal-header center">
+        <a href="#!" class="btn-floating pulse teal darken-4 modal-close right"><i class="fas fa-times"></i></a>
+        <!-- <h3 class="fas fa-calendar-plus"></h3> -->
+        <h4 class="teal-text">Book Appointment </h4>
+      </div>
+
+      <div class="modal-content">
+        <form action="/" method="POST">
+          <div class="input-field">
+            <input type="text" id="name" name="name" required class="validate"
+              value="<%= typeof name != 'undefined' ? name : '' %>" />
+            <label for="name">Enter Full Name</label>
+          </div>
+          <!-- <div class="input-field">
+            <input type="email" id="email" name="email" required class="validate"
+              value="<%= typeof email != 'undefined' ? email : '' %>" />
+            <label for="email">Enter Email</label>
+          </div> -->
+          <div class="input-field">
+            <select id="department" required name="department">
+              <option value="" disabled selected>Choose the department</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+              <option value="4">Option 4</option>
+              <option value="5">Option 5</option>
+              <option value="6">Option 6</option>
+              <option value="7">Option 7</option>
+              <option value="8">Option 8</option>
+              <option value="9">Option 9</option>
+              <option value="10">Option 10</option>
+            </select>
+            <label for="department">Department</label>
+          </div>
+          <div class="input-field">
+            <input type="text" id="date" name="appointmentDate" required class="datepicker">
+            <label for="date">Appointment Date</label>
+          </div>
+          <button type="submit" class="btn teal waves-effect right darken-4">Book Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
